@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: steve
+ * User: steven
  * Date: 9-5-2018
  * Time: 20:20
  */
@@ -23,7 +23,7 @@ include "IndexMethode.php";
      }
 
      static function showMain(){
-         echo " Standaard Methode";
+         echo "Standaard Methode";
 
          $seq = new Sequencer(["Liam","Steven", "Tom","Jan", "Frank"]);
          echo $seq->run(new StandaardMethode());
@@ -31,7 +31,11 @@ include "IndexMethode.php";
          echo " Index Methode";
 
          $seq = new Sequencer(["Liam","Steven", "Tom","Jan", "Frank"]);
-         echo $seq->run(new IndexMethode(2));
+         try {
+             echo $seq->run(new IndexMethode(2));
+         }catch(Exception $e){
+             echo 'Caught exception: ',  $e->getMessage(), "\n";
+         }
 
 
      }

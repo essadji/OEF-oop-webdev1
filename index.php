@@ -1,7 +1,7 @@
 
 /**
  * Created by PhpStorm.
- * User: steve
+ * User: steven
  * Date: 9-5-2018
  * Time: 20:55
  */
@@ -16,9 +16,7 @@ include 'PageBuilder.php'?>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../syntra-web-1-2k18/css/normalize.css">
-        <link rel="stylesheet" href="../syntra-web-1-2k18/css/main.css">
+
     </head>
     <body>
 

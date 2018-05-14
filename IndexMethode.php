@@ -7,7 +7,6 @@
  */
 
 include "StandaardMethode.php";
-include "Vergelijking.php";
 
 class IndexMethode extends StandaardMethode
 {
@@ -17,8 +16,16 @@ class IndexMethode extends StandaardMethode
 
     public function __construct(int $pIndex)
     {
-        $this->_index = $pIndex;
-        $this->_vergelijk = new Vergelijking();
+        if (is_numeric($pIndex)) {
+            if ($pIndex >= 0){
+                $this->_index = $pIndex;
+            }else{
+                $this->_index = 0;
+            }
+            $this->_vergelijk = new Vergelijking();
+        } else{
+            throw new Exception("Type mismatch. ". $pIndex." is not a number.",9000);
+        }
     }
 
     public function sortArray($unSorted)
@@ -28,7 +35,17 @@ class IndexMethode extends StandaardMethode
 
     private function vergelijk(string $param1, string $param2)
     {
-        return $this->_vergelijk->vergelijk(substr($param1, $this->_index,1),substr($param2, $this->_index,1));
+        if (strlen($param1)<$this->_index){
+            $value1 = " ";
+        }else{
+            $value1=substr($param1, $this->_index,1);
+        }
+        if (strlen($param2)<$this->_index){
+            $value2 = " ";
+        }else{
+            $value2=substr($param1, $this->_index,1);
+        }
+        return $this->_vergelijk->vergelijk($value1,$value2);
     }
 
 }

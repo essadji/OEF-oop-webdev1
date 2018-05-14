@@ -6,9 +6,9 @@
  * Time: 19:53
  */
 
-include "sequenceMethode.php";
+include "iSequenceMethode.php";
 
-class Vergelijking implements sequenceMethode
+class Vergelijking implements iSequenceMethode
 {
 
 

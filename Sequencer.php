@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: steve
+ * User: steven
  * Date: 9-5-2018
  * Time: 19:53
  */
@@ -15,8 +15,8 @@ class Sequencer
 
     public function __construct($pArray)
     {
-        $array=$pArray;
-        $vergelijk= new Vergelijking();
+        $array = $pArray;
+        $vergelijk = new Vergelijking();
     }
 
     public function run(StandaardMethode $pSortMethod)
