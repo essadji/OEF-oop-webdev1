@@ -18,6 +18,12 @@ class Sequencer
         $this->_array = $array;
     }
 
+    public function setInput(array $inputArray)
+    {
+
+    }
+
+
     public function sorteerArray(array $array)
     {
 

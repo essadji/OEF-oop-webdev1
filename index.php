@@ -18,13 +18,21 @@ include 'classes/PageBuilder.php';
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <?php
+        PageBuilder::showNav();
+    ?>
+
+
 </head>
 <body>
 
 
 <main>
     <?php
-        PageBuilder::();
+        PageBuilder::showTitle();
+
+        PageBuilder::showMain();
 
         $mySequencer = new Sequencer();
 
@@ -34,9 +42,17 @@ include 'classes/PageBuilder.php';
 
     ?>
 
+
+
     <br>
 
 </main>
 
 </body>
+
+<footer>
+    <?php
+        pagebuilder::showFooter();
+    ?>
+</footer>
 </html>

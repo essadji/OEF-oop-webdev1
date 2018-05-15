@@ -43,7 +43,7 @@ abstract class PageBuilder{
     }
 
     static function showFooter(){
-        echo "&copy; Geert Van Gent";
+        echo "&copy; Maarten Alles";
     }
 
 
