@@ -6,28 +6,29 @@
  * Time: 19:53
  */
 
-include "Vergelijking.php";
+include_once "Vergelijking.php";
 
 class StandaardMethode
 {
     private $_vergelijk;
 
-    public function __construct(int $pIndex)
+    public function __construct()
     {
-        $this->_index = $pIndex;
         $this->_vergelijk = new Vergelijking();
     }
 
-    public function sortArray($pUnSorted)
+
+
+    public function comp(string $param1, string $param2)
     {
-        usort($pUnSorted, "vergelijk");
+        return $this->_vergelijk->vergelijk($param1, $param2);
+
     }
 
-    private function vergelijk(string $param1, string $param2)
+    public function sortArray(array $pUnSorted)
     {
-        return $this->_vergelijk->vergelijk($param1,$param2);
-
-
+        usort($pUnSorted, array($this,"comp"));
+        return $pUnSorted;
     }
 
 }

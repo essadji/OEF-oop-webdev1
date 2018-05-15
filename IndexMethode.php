@@ -6,7 +6,7 @@
  * Time: 19:54
  */
 
-include "StandaardMethode.php";
+include_once "StandaardMethode.php";
 
 class IndexMethode extends StandaardMethode
 {
@@ -28,12 +28,9 @@ class IndexMethode extends StandaardMethode
         }
     }
 
-    public function sortArray($unSorted)
-    {
-        usort($pUnSorted, "vergelijk");
-    }
 
-    private function vergelijk(string $param1, string $param2)
+
+    public function comp(string $param1, string $param2)
     {
         if (strlen($param1)<$this->_index){
             $value1 = " ";

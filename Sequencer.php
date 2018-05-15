@@ -12,11 +12,12 @@ include "StandaardMethode.php";
 class Sequencer
 {
     private $_array;
+    private $_vergelijk;
 
-    public function __construct($pArray)
+    public function __construct(array $pArray)
     {
-        $array = $pArray;
-        $vergelijk = new Vergelijking();
+        $this->_array = $pArray;
+        $this->_vergelijk = new Vergelijking();
     }
 
     public function run(StandaardMethode $pSortMethod)

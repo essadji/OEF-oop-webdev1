@@ -6,7 +6,7 @@
  * Time: 19:53
  */
 
-include "iSequenceMethode.php";
+include_once "iSequenceMethode.php";
 
 class Vergelijking implements iSequenceMethode
 {
@@ -29,16 +29,16 @@ class Vergelijking implements iSequenceMethode
         return ($param1 == $param2);
     }
 
-    public function vergelijk($param1, $param2)
+    public function vergelijk(string $param1, string $param2)
     {
 
-        if (groter($param1,$param2))
+        if ($this->groter($param1,$param2))
         {
             return -1;
-        } elseif (kleiner($param1,$param2))
+        } elseif ($this->kleiner($param1,$param2))
         {
             return 1;
-        }elseif (gelijk($param1,$param2))
+        }elseif ($this->gelijk($param1,$param2))
         {
             return 0;
         }

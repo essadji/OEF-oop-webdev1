@@ -6,9 +6,9 @@
  * Time: 20:20
  */
 
-include "Sequencer.php";
-include "StandaardMethode.php";
-include "IndexMethode.php";
+include_once "Sequencer.php";
+include_once "StandaardMethode.php";
+include_once "IndexMethode.php";
 
  abstract class PageBuilder{
 
@@ -25,14 +25,21 @@ include "IndexMethode.php";
      static function showMain(){
          echo "Standaard Methode";
 
-         $seq = new Sequencer(["Liam","Steven", "Tom","Jan", "Frank"]);
-         echo $seq->run(new StandaardMethode());
+         $seq = new Sequencer(array("Liam","Steven", "Tom","Jan", "Frank"));
+         $sorted = $seq->run(new StandaardMethode());
+
+         foreach ($sorted as $value) {
+             echo "$value\n";
+         }
 
          echo " Index Methode";
 
-         $seq = new Sequencer(["Liam","Steven", "Tom","Jan", "Frank"]);
+         $seq = new Sequencer(array("Liam","Steven", "Tom","Jan", "Frank"));
          try {
-             echo $seq->run(new IndexMethode(2));
+             $sorted =  $seq->run(new IndexMethode(2));
+             foreach ($sorted as $value) {
+                 echo "$value\n";
+             }
          }catch(Exception $e){
              echo 'Caught exception: ',  $e->getMessage(), "\n";
          }
