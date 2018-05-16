@@ -4,7 +4,6 @@ include_once ('interfaces/ISequenceMethode.php');
 
 class Vergelijking implements ISequenceMethode
 {
-
     /**
      * Een functie die test of het eerste argument ‘kleiner’ is dan het tweede.
      * @param mixed $a -> Het eerste te vergelijken argument.
@@ -40,9 +39,7 @@ class Vergelijking implements ISequenceMethode
             return true;
         }
         return false;
-
     }
-
 }
 
 ?>
