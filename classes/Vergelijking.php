@@ -10,10 +10,10 @@ abstract class Vergelijking implements ISequenceMethode
         $this->_a = $denarray;
     }
     /**
-    +     * @param  $a
-    +     * @param  $b
-    +     * @return bool|int
-    +     */
+     * @param  $a
+     * @param  $b
+     * @return bool|int
+     */
     function kleiner($a, $b)
     {
         if ($a==$b) return 0;
