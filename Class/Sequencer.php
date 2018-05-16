@@ -7,8 +7,6 @@
  */
 
 
-include "StandaardMethode.php";
-
 class Sequencer
 {
     private $_array;
@@ -17,13 +15,13 @@ class Sequencer
     public function __construct(array $pArray)
     {
         $this->_array = $pArray;
-        $this->_vergelijk = new Vergelijking();
+
     }
 
-    public function run(StandaardMethode $pSortMethod)
+    public function run(Vergelijking $pVergelijk)
     {
 
-        return $pSortMethod->sortArray($this->_array );
+        return $pVergelijk->sortArray($this->_array );
 
     }
 

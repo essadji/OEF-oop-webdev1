@@ -6,7 +6,7 @@
  * Time: 20:55
  */
 <?php
-include 'PageBuilder.php'?>
+include_once("ClassLoader.php"); ?>
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -25,9 +25,6 @@ include 'PageBuilder.php'?>
                 PageBuilder::showMain();
             ?>
             <br>
-
-
-
         </main>
 
 
