@@ -1,6 +1,6 @@
 <?php
 
-
+include_once './classes/ClassLoader.php';
 
 abstract class PageBuilder{
 
@@ -15,22 +15,13 @@ abstract class PageBuilder{
     }
 
     static function showMain(){
-        echo " koekoek";
-        $robot = new Robot(5);
-        echo $robot->maakZichtbaar();
+        echo "Standaard Methode";
 
-        $robot2 = new Robot(20);
-        echo $robot2->maakZichtbaar();
-
-        $robot2->fight($robot);
-
-
-        $robot3 = new RobotWithSPeaker(40, "stop");
-        echo $robot3->maakZichtbaar();
-        $robot3->scream();
-
-        $robot4 = new RobotWithSiren(80);
-        $robot4->activate();
+        $seq = new Sequencer(array("Maarten", "Steven", "Tom", "Jan", "Frank"));
+        $sorted = $seq->run(new StandaardMethode());
+        foreach ($sorted as $value) {
+            echo "$value\n";
+        }
 
     }
 

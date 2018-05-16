@@ -6,7 +6,7 @@
  * Time: 19:52
  */
 
-include_once ('interfaces/ISequenceMethode.php');
+include_once ('./interfaces/ISequenceMethode.php');
 
 abstract class Vergelijking implements ISequenceMethode
 {
