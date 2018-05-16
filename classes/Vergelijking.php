@@ -1,8 +1,6 @@
 <?php
 
-include_once ('interfaces/ISequenceMethode.php');
-
-class Vergelijking implements ISequenceMethode
+abstract class Vergelijking implements ISequenceMethode
 {
     /**
      * Een functie die test of het eerste argument ‘kleiner’ is dan het tweede.

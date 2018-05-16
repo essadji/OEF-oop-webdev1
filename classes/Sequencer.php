@@ -11,6 +11,8 @@ class Sequencer
 {
     private $_inputArray;
     private $_outputArray;
+    private $_sortMethod;
+    private $_charIndex;
 
     /**
      * Sequencer constructor.
@@ -27,22 +29,40 @@ class Sequencer
     }
 
     /**
-     * @return mixed
+     * @param mixed $sortMethod
      */
-    function sorteerStandaard(){
-        $sorteerArray = New StandaardMethode($this->_inputArray);
-        $this->_outputArray=$sorteerArray->sorteerArray();
-        return $this->_outputArray;
+    public function setSortMethod($sortMethod): void
+    {
+        $this->_sortMethod = $sortMethod;
     }
 
     /**
-     * @return mixed -> beschrijf ook wat het resultaat dient te zijn  // SIG :: mixed is iets te algemeen hier; deze klasse in de toekomst uitbreiden naar ander soort collectie lijkt mij bovendien niet erg waarschijnlijk
+     * @param mixed $charIndex
      */
-    function sorteerIndex(){
-        $sorteerArray = New IndexMethode($this->_inputArray);
-        $this->_outputArray=$sorteerArray->sorteerArray();
-        return $this->_outputArray;
+    public function setCharIndex($charIndex): void
+    {
+        $this->_charIndex = $charIndex;
     }
+
+
+
+    function sorteer(){
+
+        switch ($this->_sortMethod) {
+            case 1:
+                $sorteerArray = New StandaardMethode($this->_inputArray);
+                break;
+            case 2:
+                $sorteerArray = New IndexMethode($this->_inputArray);
+                $sorteerArray->setCharIndex($this->_charIndex);
+                break;
+        }
+
+        $this->_outputArray=$sorteerArray->sorteer();
+        return $this->_outputArray;
+
+    }
+
 }
 ?>
 
