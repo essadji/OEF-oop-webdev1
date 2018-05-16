@@ -10,13 +10,12 @@ include ("interfaces/IsequenceMethode.php");
 abstract class Vergelijking implements IsequenceMethode
 {
 
-    public function __construct()
-    {
 
-
-
-    }
-
+    /**
+     * @param $a -> eerste waarde
+     * @param $b -> tweede waarde
+     * @return int
+     */
     public function compare($a, $b) {
 
         if($a == $b) {
@@ -64,3 +63,5 @@ abstract class Vergelijking implements IsequenceMethode
     }
 
 }
+
+

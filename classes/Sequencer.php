@@ -56,11 +56,4 @@ class Sequencer
     }
 
 
-
-    public function compare(){
-
-
-
-    }
-
 }

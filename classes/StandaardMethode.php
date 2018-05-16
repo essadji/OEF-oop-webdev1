@@ -1,6 +1,5 @@
 <?php
 
-include_once 'Vergelijking.php';
 /**
  * Objecten van deze Class implementeren EEN alfabetische methode om strings in een array te ordenen.
  * Class StandaardMethode
