@@ -7,7 +7,7 @@
  *
  * Class IndexMethode
  */
-class IndexMethode
+class IndexMethode extends Vergelijking
 {
 
     private $_sortArray;

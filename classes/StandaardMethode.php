@@ -1,14 +1,14 @@
 <?php
 
+include_once 'Vergelijking.php';
 /**
  * Objecten van deze Class implementeren EEN alfabetische methode om strings in een array te ordenen.
  * Class StandaardMethode
  */
-class StandaardMethode
+class StandaardMethode extends Vergelijking
 {
 
-
-    private $_sortArray;
+    private $_arrayToSort;
 
     /**
      * StandaardMethode constructor.
@@ -17,17 +17,20 @@ class StandaardMethode
     public function __construct($sortArray)
     {
 
-        $this->_sortArray = $sortArray;
+        $this->_arrayToSort = $sortArray;
 
     }
 
-    /**
-     * @return bool
-     */
-    public function sorteerStandaard() {
 
-        return sort($this->_sortArray);
 
+    public function sortStandaard() {
+
+
+        usort($this->_arrayToSort, "parent::compare");
+
+        //sort($this->_arrayToSort, SORT_STRING);
+
+        return $this->_arrayToSort;
     }
 
 

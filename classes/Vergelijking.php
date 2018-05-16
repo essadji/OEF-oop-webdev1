@@ -1,14 +1,30 @@
 <?php
 
-include "../interfaces/IsequenceMethode.php";
+include ("interfaces/IsequenceMethode.php");
 
 /**
  * Deze Class beschrijft objecten die algoritmes voor ordening van stings bevatten.
  * Alle algoritmes implementeren de interface sequenceMethode
  * Class Vergelijking
  */
-class Vergelijking implements IsequenceMethode
+abstract class Vergelijking implements IsequenceMethode
 {
+
+    public function __construct()
+    {
+
+
+
+    }
+
+    public function compare($a, $b) {
+
+        if($a == $b) {
+            return 0;
+        }
+        return ($a < $b) ? -1 : 1;
+
+    }
 
      /**
      * Een functie die test of het eerste argument 'kleiner' is dan het tweede.
@@ -17,11 +33,9 @@ class Vergelijking implements IsequenceMethode
      * @return bool -> Returns true if $a < $b
      */
     public function kleiner($a, $b) {
-        if($a < $b) {
-            return true;
-        }else {
-            return false;
-        }
+
+        return ($a < $b) ? true : false;
+
     }
 
     /**
@@ -31,11 +45,9 @@ class Vergelijking implements IsequenceMethode
      * @return bool -> Returns true if $a > $b
      */
     public function groter($a, $b){
-        if($a > $b) {
-            return true;
-        }else {
-            return false;
-        }
+
+        return ($a > $b) ? true : false;
+
     }
 
     /**
@@ -46,12 +58,9 @@ class Vergelijking implements IsequenceMethode
      * @throws exception -> Returns string
      */
     public function gelijk($a, $b){
-        if($a == $b) {
-            return true;
-        }else {
-            return false;
-        }
-    }
 
+        return ($a == $b) ? true : false;
+
+    }
 
 }
