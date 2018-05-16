@@ -1,19 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abel
- * Date: 9/05/18
- * Time: 19:36
- */
 
-include "interfaces/sequenceMethode.php";
+include 'classes/Vergelijking.php';
 
-abstract class StandaardMethode implements sequenceMethode
+class StandaardMethode extends Vergelijking
 {
-    function compare($a, $b)
-    {
-        if ($a==$b) return 0;
-        return ($a<$b)?-1:1;
+    private $_arrayToSort;
+
+        public function __construct(array $arrayToSort)
+        {
+            parent::__construct($arrayToSort);
+            $this->_arrayToSort = $arrayToSort;
+        }
+
+    function sorteerArray(){
+        //Vergelijking::__construct($this->_arrayToSort);
+        //usort($this->_arrayToSort,Vergelijking::kleiner());
+        $naarfunctie = Vergelijking::kleiner();
+        usort($this->_arrayToSort,'$naarfunctie');
     }
 
 

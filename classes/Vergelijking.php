@@ -1,40 +1,38 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abel
- * Date: 9/05/18
- * Time: 19:36
- */
-include 'Sequencer.php';
-
-class Vergelijking extends Sequencer
+// SIG :: vergeet de DocBlocks niet; liefst TIJDENS het codekloppen en niet als versiering achteraf...
+//abstract
+abstract class Vergelijking implements ISequenceMethode
 {
     private $_a;
 
     public function __construct(array $denarray)
     {
-        parent::__construct($denarray);
         $this->_a = $denarray;
     }
+    /**
+    +     * @param  $a
+    +     * @param  $b
+    +     * @return bool|int
+    +     */
+    function kleiner($a, $b)
+    {
+        if ($a==$b) return 0;
+        return ($a<$b)?-1:1;
+    }
 
-    //methodes
-    public function kleiner(Sequencer $a, Sequencer $b)
+    function groter($a, $b)
     {
-        //return $a < $b;
+        if ($a==$b) return 0;
+        return ($a>$b)?-1:1;
+    }
+
+    /*
+    function gelijk($a, $b)
+    {
         if ($a==$b) return 0;
         return ($a<$b)?-1:1;
     }
-    public function groter(Sequencer $a, Sequencer $b)
-    {
-        //return $a > $b;
-        if ($a==$b) return 0;
-        return ($a<$b)?-1:1;
-    }
-    public function gelijk(Sequencer $a, Sequencer $b)
-    {
-        //return $a == $b;
-        if ($a==$b) return 0;
-        return ($a<$b)?-1:1;
-    }
+    */
+    // SIG :: niet echt elegant die identieke functies (OK, toegegeven, de opdracht zelf is ook niet de meest elegante implementatie)
 
 }

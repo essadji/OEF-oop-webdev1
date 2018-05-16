@@ -1,11 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abel
- * Date: 9/05/18
- * Time: 21:05
- */
-include 'classes/Vergelijking.php';
+
+require_once ('classes/classloader.php');
+
+
+$mySequencer = new Sequencer(array('a','d','z','d','q'));
+
+$result = $mySequencer->sorteerStandaard();
+var_dump($result);
+
+
+echo("<pre>");
+print_r($result);
+echo("</pre>");
 
 /*
 function user_compare($x, $y)
@@ -24,10 +30,6 @@ foreach($array1 as $key => $value)
     echo "$key: $value\n";
 }
 */
-
-$denarray = array('a','b','c','d','e');
-
-$mysequencer = new Vergelijking($denarray);
 
 /*
 $users = array( array( "peter", "male", "46"),
@@ -49,3 +51,7 @@ echo("<pre>");
 print_r($users);
 echo("</pre>");
 */
+
+
+
+//usort($array1, $functie);
