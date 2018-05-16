@@ -10,9 +10,21 @@
 class IndexMethode
 {
 
-    public function __construct($myInput, $index)
+    private $_sortArray;
+    private $_index;
+
+    public function __construct($sortArray, $index)
     {
-        return ksort($this->$myInput, $this->$index);
+
+        $this->_sortArray = $sortArray;
+        $this->_index = $index;
+
+    }
+
+    public function sortIndex() {
+
+        return ksort($this->_sortArray, $this->_index);
+
     }
 
 }

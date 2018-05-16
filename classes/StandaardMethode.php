@@ -6,9 +6,20 @@
  */
 class StandaardMethode
 {
-    public function __construct($myInput)
+
+    private $_sortArray;
+
+    public function __construct($sortArray)
     {
-        return sort($this->$myInput);
+
+        $this->_sortArray = $sortArray;
+
+    }
+
+    public function sorteerStandaard() {
+
+        return sort($this->_sortArray);
+
     }
 
 

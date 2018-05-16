@@ -10,20 +10,17 @@ include "../interfaces/IsequenceMethode.php";
 class Vergelijking implements IsequenceMethode
 {
 
-    //public $result;
-
      /**
      * Een functie die test of het eerste argument 'kleiner' is dan het tweede.
      * @param mixed $a -> Het eerste te vergelijken argument
      * @param mixed $b -> Het tweede te vergelijken argument
      * @return bool -> Returns true if $a < $b
-     * @throws exception -> Returns string
      */
     public function kleiner($a, $b) {
         if($a < $b) {
-            return $run = -1;
+            return true;
         }else {
-            throw new Exception("no data");
+            return false;
         }
     }
 
@@ -32,13 +29,12 @@ class Vergelijking implements IsequenceMethode
      * @param mixed $a -> Het eerste te vergelijken argument
      * @param mixed $b -> Het tweede te vergelijken argument
      * @return bool -> Returns true if $a > $b
-     * @throws exception -> Returns string
      */
     public function groter($a, $b){
         if($a > $b) {
-            return $run = 1;
+            return true;
         }else {
-            throw new Exception("no data");
+            return false;
         }
     }
 
@@ -51,9 +47,9 @@ class Vergelijking implements IsequenceMethode
      */
     public function gelijk($a, $b){
         if($a == $b) {
-            return $run = 0;
+            return true;
         }else {
-            throw new exception("no data");
+            return false;
         }
     }
 

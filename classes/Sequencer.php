@@ -11,45 +11,54 @@ include "IndexMethode.php";
 class Sequencer
 {
 
-    public $myInput = [];
-    public $run;
+    public $_myInput = [];
+    public $_myIndex;
+
+
+    public $_run;
+
 
     /**
      * Sequencer constructor.
-     * @param $run
-     * @param $myInput
-     * @param $vergelijking
-     * @throws Exception
+     * @param array $myInput -> is een array van strings
+     * @exit -> warning when data is not array
      */
-    public function __construct($run, $myInput, $vergelijking)
+    public function __construct($myInput)
     {
-        if ($this->$run > 0) {
-            return usort($this->$myInput, $this->$vergelijking);
-        } else {
-            throw new Exception("no data");
+
+        if(!is_array($myInput)) {
+            exit('Data is not an array');
         }
+
+        $this->_myInput = $myInput;
+
     }
 
-    /**
-     * zet de woorden in de array die wordt geordend
-     * @param string $word -> woord dat van een input komt die moet toegevoegd worden in een array
-     */
-    public function setInput(string $word)
-    {
-        array_push($this->myInput, $word);
-    }
 
     /**
-     * @param $vergelijking
-     * @return bool
-     * @throws Exception
+     * @return StandaardMethode
      */
-    public function run($vergelijking){
-        if($vergelijking > 0) {
-            return $run = true;
-        }else {
-            throw new Exception("No values");
-        }
+    public function standaardMethode() {
+
+        return $sortArray = new StandaardMethode($this->_myInput);
+
+    }
+
+
+    /**
+     * @return IndexMethode
+     */
+    public function indexMethode() {
+
+        return $sortArray = new IndexMethode($this->_myInput, $this->_myIndex);
+
+    }
+
+
+    public function compare(){
+
+
+
     }
 
 }
