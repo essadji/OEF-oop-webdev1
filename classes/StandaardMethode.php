@@ -7,8 +7,13 @@
 class StandaardMethode
 {
 
+
     private $_sortArray;
 
+    /**
+     * StandaardMethode constructor.
+     * @param $sortArray
+     */
     public function __construct($sortArray)
     {
 
@@ -16,6 +21,9 @@ class StandaardMethode
 
     }
 
+    /**
+     * @return bool
+     */
     public function sorteerStandaard() {
 
         return sort($this->_sortArray);

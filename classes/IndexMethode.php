@@ -13,6 +13,11 @@ class IndexMethode
     private $_sortArray;
     private $_index;
 
+    /**
+     * IndexMethode constructor.
+     * @param $sortArray
+     * @param $index
+     */
     public function __construct($sortArray, $index)
     {
 
@@ -21,6 +26,9 @@ class IndexMethode
 
     }
 
+    /**
+     * @return bool
+     */
     public function sortIndex() {
 
         return ksort($this->_sortArray, $this->_index);
