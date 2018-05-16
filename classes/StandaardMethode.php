@@ -9,14 +9,36 @@
 class StandaardMethode
 {
 
+    private $_arrayToSort;
 
-    public function __construct($array)
-    {
-        $this->$_array = $array;
+    /**
+     * StandaardMethode constructor.
+     * @param $arrayToSort
+     */
+    function __construct($arrayToSort){
+        $this->_arrayToSort=$arrayToSort;
     }
 
-    public function sorteer()
+    /**
+     * @param $a
+     * @param $b
+     * @return int
+     */
+    private static function sorteer($a, $b)
     {
-        return sort($array);
+        $vgl = new Vergelijking();
+        if ($vgl->gelijk($a,$b)) {
+            return 0;
+        }
+        return ($vgl->kleiner($a,$b)) ? -1 : 1;
+    }
+
+    /**
+     * @return mixed
+     */
+    function sorteerArray(){
+        usort($this->_arrayToSort,array('StandaardMethode','sorteer'));
+
+        return $this->_arrayToSort;
     }
 }

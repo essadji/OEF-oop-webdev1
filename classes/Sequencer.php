@@ -7,8 +7,8 @@
  */
 
 
-include './interfaces/sequenceMethode.php';
-include './classes/Vergelijking.php';
+include './interfaces/ISequenceMethode.php';
+include './classes/ClassLoader.php';
 
 class Sequencer
 {

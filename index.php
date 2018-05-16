@@ -34,11 +34,9 @@ include 'classes/PageBuilder.php';
 
         PageBuilder::showMain();
 
-        $mySequencer = new Sequencer();
-
-        $mySequencer->setInput(array("aap", "olifant", "gnoe"));
-
-        $result = mySequencer->run(new IndexMethode());
+        //$mySequencer = new Sequencer();
+        //$mySequencer->setInput(array("aap", "olifant", "gnoe"));
+        //$result = mySequencer->run(new IndexMethode());
 
     ?>
 

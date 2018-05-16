@@ -1,9 +1,5 @@
 <?php
 
-include 'IndexMethode.php';
-include 'Sequencer.php.php';
-include 'StandaardMethode.php.php';
-include 'Vergelijking.php';
 
 
 abstract class PageBuilder{

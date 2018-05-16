@@ -6,11 +6,11 @@
  * Time: 19:55
  */
 
-<?php
+
 /**
 * Methods to be implemented by all implementing classes.
 */
-interface IsequenceMethode
+interface ISequenceMethode
 {
 /**
 * Een functie die test of het eerste argument ‘kleiner’ is dan het tweede.
