@@ -14,21 +14,6 @@ class Naammotor
 
 
 
-
-
-
-//    private $Motor =[];
-//
-//    public function run(result $result)
-//    {
-//
-//    $result->vergelijking();
-//
-//    sort($this->Motor, $result);
-//
-//    echo $result;
-
-
         //if else statment wat als output te geven. wat klein groot og gelijk is.
 //    }
 
